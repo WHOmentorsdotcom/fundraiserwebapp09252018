@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery.details
-//= require jquery.textchange
-//= require preorder
+//= require jquery.textexchange
+//= require donation
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
