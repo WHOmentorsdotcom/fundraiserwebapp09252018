@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery-ui
-//= require jquery.details
-//= require jquery.textexchange
+//= require jquery-details
+//= require jquery-textchange
 //= require donation
 //= require rails-ujs
 //= require activestorage
