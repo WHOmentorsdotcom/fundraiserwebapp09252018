@@ -1,0 +1,32 @@
+<div class="gray_background">
+  <div class="wrapper clearfix">
+    <div class="main_content <%= "donation_options" if Settings.use_donation_options %>">
+      <h3>PayPal Donate Checkout</h3>
+      <p>
+        If you're a PayPal account holder, simply log in to complete the transaction. If you're new, select "Pay with Debit or Credit Card" on the next page. 
+        <br />
+        <br />
+        <% if Settings.use_donation_options %>
+          Select a contribution amount and enter your valid email address below (to prevent accidental checkouts).
+        <% else %>
+          Enter your valid email address below.
+        <% end %>
+
+      </p>
+      <%= form_tag "/donation/prefill", :id => "checkout" do %>
+      <%= render 'donation/contribution_options' %>
+      <div class="checkout_controls">
+        <div class="checkout_controls_wrapper">
+          <div class="checkout_controls_inner">
+            <%= email_field_tag "email", nil, :placeholder => "Enter valid email address here.", :required => "required", :id => "email" %>
+            <%= hidden_field_tag "donation", true %>
+            <%= hidden_field_tag "quantity", params[:quantity] %>
+            <%= submit_tag "Donate Now!", :class => "blue_button", :id => "paypal_button" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= render 'donation/checkout/sidebar' %>
+  </div>
+</div>
